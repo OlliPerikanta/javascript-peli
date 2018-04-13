@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Ollin Peli</title>
+    <meta name="viewport" content="widt=device-width, initial-scale=1">
+
+    <link href="tyyli.css" rel="stylesheet" type="text/css" />
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="ohjenappula" id="ohje">
+        <i class="fa fa-info-circle" onclick="myFunction()"></i>
+        <span class="popuptext" id="ohjeikkuna">Ohjeet:<br>1. Yksi pelaa mustallakortilla ja loput pelaavat valkoisillakorteilla.<br>2. Mustallakortilla pelaava lausuu tekstin mitä hänen kortissaan lukee ja sen jälkeen valkoisillakorteilla pelaavat täydentävät mustankortin tekstin.<br> 3. Hauskimman lauseen/tekstin muodostava valkoisenkortin omistaja voittaa ja saa pisteen.<br> 4. Mustankortin hallitsija päättää mikä on hauskin lause/teksti.<br>5. Vaihdetaan uudet kortit ja peli jatkuu!</span>
+    </div>
+
+
+    <script type="text/javascript">
+        function myFunction() {
+            var popup = document.getElementById("ohjeikkuna");
+            popup.classList.toggle("show");
+        }
+
+        function aloitus() {
+            var ekaKortti = document.getElementById("mustavari");
+            ekaKortti.style.display = "block";
+
+            var tokaKortti = document.getElementById("valkovari");
+            tokaKortti.style.display = "block";
+
+            var kolmasKortti = document.getElementById("paina");
+            kolmasKortti.style.display = "none";
+
+            var ohjePoisto = document.getElementById("ohje");
+            ohjePoisto.style.display = "none";
+        }
+
+        function aloitus2() {
+            var ekaKortti = document.getElementById("vihrea");
+            ekaKortti.style.display = "block";
+
+            var tokaKortti = document.getElementById("punanen");
+            tokaKortti.style.display = "block";
+
+            var kolmasKortti = document.getElementById("valkovari");
+            kolmasKortti.style.display = "none";
+
+            var kolmasKortti = document.getElementById("mustavari");
+            kolmasKortti.style.display = "none";
+        }
+
+        function aloitus3() {
+            var ekaKortti = document.getElementById("vihrea");
+            ekaKortti.style.display = "block";
+
+            var tokaKortti = document.getElementById("punanen");
+            tokaKortti.style.display = "block";
+
+            var kolmasKortti = document.getElementById("valkovari");
+            kolmasKortti.style.display = "none";
+
+            var kolmasKortti = document.getElementById("mustavari");
+            kolmasKortti.style.display = "none";
+
+            document.getElementById("punanen").setAttribute("onclick", "javascript: rooli2();");
+
+            document.getElementById("vihrea").setAttribute("onclick", "javascript: change2();");
+
+            var ss = document.getElementById("paakayttaja");
+            ss.style.display = "block";
+
+            var x = document.getElementById("kayttaja");
+            x.style.display = "none";
+        }
+
+
+        var valko = ["valkosetkortit/card1.png", "valkosetkortit/card2.png", "valkosetkortit/card3.png", "valkosetkortit/card4.png", "valkosetkortit/card5.png", "valkosetkortit/card6.png", "valkosetkortit/card7.png", "valkosetkortit/card8.png", "valkosetkortit/card9.png", "valkosetkortit/card10.png", "valkosetkortit/card11.png", "valkosetkortit/card12.png", "valkosetkortit/card13.png", "valkosetkortit/card14.png", "valkosetkortit/card15.png", "valkosetkortit/card16.png", "valkosetkortit/card17.png", "valkosetkortit/card18.png", "valkosetkortit/card19.png", "valkosetkortit/card20.png", "valkosetkortit/card21.png", "valkosetkortit/card22.png", "valkosetkortit/card23.png", "valkosetkortit/card24.png", "valkosetkortit/card25.png", "valkosetkortit/card26.png", "valkosetkortit/card27.png", "valkosetkortit/card28.png", "valkosetkortit/card29.png", "valkosetkortit/card30.png", "valkosetkortit/card31.png", "valkosetkortit/card32.png", "valkosetkortit/card33.png", "valkosetkortit/card34.png", "valkosetkortit/card35.png", "valkosetkortit/card36.png", "valkosetkortit/card37.png", "valkosetkortit/card38.png", "valkosetkortit/card39.png", "valkosetkortit/card40.png", "valkosetkortit/card41.png", "valkosetkortit/card42.png", "valkosetkortit/card43.png", "valkosetkortit/card44.png", "valkosetkortit/card45.png", "valkosetkortit/card46.png", "valkosetkortit/card47.png", "valkosetkortit/card48.png", "valkosetkortit/card49.png", "valkosetkortit/card50.png", "valkosetkortit/card51.png", "valkosetkortit/card52.png", "valkosetkortit/card53.png", "valkosetkortit/card54.png", "valkosetkortit/card55.png", "valkosetkortit/card56.png", "valkosetkortit/card57.png", "valkosetkortit/card58.png", "valkosetkortit/card59.png", "valkosetkortit/card60.png", "valkosetkortit/card61.png", "valkosetkortit/card62.png", "valkosetkortit/card63.png", "valkosetkortit/card64.png", "valkosetkortit/card65.png", "valkosetkortit/card66.png", "valkosetkortit/card67.png", "valkosetkortit/card68.png", "valkosetkortit/card69.png", "valkosetkortit/card70.png", "valkosetkortit/card71.png", "valkosetkortit/card72.png", "valkosetkortit/card73.png", "valkosetkortit/card74.png", "valkosetkortit/card75.png", "valkosetkortit/card76.png", "valkosetkortit/card77.png", "valkosetkortit/card78.png", "valkosetkortit/card79.png", "valkosetkortit/card80.png", "valkosetkortit/card81.png", "valkosetkortit/card82.png", "valkosetkortit/card83.png", "valkosetkortit/card84.png", "valkosetkortit/card85.png", "valkosetkortit/card86.png", "valkosetkortit/card87.png", "valkosetkortit/card88.png", "valkosetkortit/card89.png", "valkosetkortit/card90.png", "valkosetkortit/card91.png", "valkosetkortit/card92.png", "valkosetkortit/card93.png", "valkosetkortit/card94.png", "valkosetkortit/card95.png", "valkosetkortit/card96.png", "valkosetkortit/card97.png", "valkosetkortit/card98.png", "valkosetkortit/card99.png", "valkosetkortit/card100.png", "valkosetkortit/card101.png", "valkosetkortit/card102.png", "valkosetkortit/card103.png", "valkosetkortit/card104.png", "valkosetkortit/card105.png", "valkosetkortit/card106.png", "valkosetkortit/card107.png", "valkosetkortit/card108.png", "valkosetkortit/card109.png", "valkosetkortit/card110.png", "valkosetkortit/card111.png", "valkosetkortit/card112.png", "valkosetkortit/card113.png", "valkosetkortit/card114.png", "valkosetkortit/card115.png", "valkosetkortit/card116.png", "valkosetkortit/card117.png", "valkosetkortit/card118.png", "valkosetkortit/card119.png", "valkosetkortit/card120.png", "valkosetkortit/card121.png", "valkosetkortit/card122.png", "valkosetkortit/card123.png", "valkosetkortit/card124.png", "valkosetkortit/card125.png", "valkosetkortit/card126.png", "valkosetkortit/card127.png", "valkosetkortit/card128.png", "valkosetkortit/card129.png", "valkosetkortit/card130.png", "valkosetkortit/card131.png", "valkosetkortit/card132.png", "valkosetkortit/card133.png", "valkosetkortit/card134.png", "valkosetkortit/card135.png", "valkosetkortit/card136.png", "valkosetkortit/card137.png", "valkosetkortit/card138.png", "valkosetkortit/card139.png", "valkosetkortit/card140.png", "valkosetkortit/card141.png", "valkosetkortit/card142.png", "valkosetkortit/card143.png", "valkosetkortit/card144.png", "valkosetkortit/card145.png", "valkosetkortit/card146.png", "valkosetkortit/card147.png", "valkosetkortit/card148.png", "valkosetkortit/card149.png", "valkosetkortit/card150.png", "valkosetkortit/card151.png", "valkosetkortit/card152.png", "valkosetkortit/card153.png", "valkosetkortit/card154.png", "valkosetkortit/card155.png", "valkosetkortit/card156.png", "valkosetkortit/card157.png", "valkosetkortit/card158.png", "valkosetkortit/card159.png", "valkosetkortit/card160.png", "valkosetkortit/card161.png", "valkosetkortit/card162.png", "valkosetkortit/card163.png", "valkosetkortit/card164.png", "valkosetkortit/card165.png", "valkosetkortit/card166.png", "valkosetkortit/card167.png", "valkosetkortit/card168.png", "valkosetkortit/card169.png", "valkosetkortit/card170.png", "valkosetkortit/card171.png", "valkosetkortit/card172.png", "valkosetkortit/card173.png", "valkosetkortit/card174.png", "valkosetkortit/card175.png", "valkosetkortit/card176.png", "valkosetkortit/card177.png", "valkosetkortit/card178.png", "valkosetkortit/card179.png", "valkosetkortit/card180.png", "valkosetkortit/card181.png", "valkosetkortit/card182.png", "valkosetkortit/card183.png", "valkosetkortit/card184.png", "valkosetkortit/card185.png", "valkosetkortit/card186.png", "valkosetkortit/card187.png", "valkosetkortit/card188.png", "valkosetkortit/card189.png", "valkosetkortit/card190.png", "valkosetkortit/card191.png", "valkosetkortit/card192.png", "valkosetkortit/card193.png", "valkosetkortit/card194.png", "valkosetkortit/card195.png", "valkosetkortit/card196.png", "valkosetkortit/card197.png", "valkosetkortit/card198.png", "valkosetkortit/card199.png", "valkosetkortit/card200.png", "valkosetkortit/card201.png", "valkosetkortit/card202.png", "valkosetkortit/card203.png", "valkosetkortit/card204.png", "valkosetkortit/card205.png", "valkosetkortit/card206.png", "valkosetkortit/card207.png", "valkosetkortit/card208.png", "valkosetkortit/card209.png", "valkosetkortit/card210.png", "valkosetkortit/card211.png", "valkosetkortit/card212.png", "valkosetkortit/card213.png", "valkosetkortit/card214.png", "valkosetkortit/card215.png", "valkosetkortit/card216.png", "valkosetkortit/card217.png", "valkosetkortit/card218.png", "valkosetkortit/card219.png", "valkosetkortit/card220.png", "valkosetkortit/card221.png", "valkosetkortit/card222.png", "valkosetkortit/card223.png", "valkosetkortit/card224.png", "valkosetkortit/card225.png", "valkosetkortit/card226.png", "valkosetkortit/card227.png", "valkosetkortit/card228.png", "valkosetkortit/card229.png", "valkosetkortit/card230.png", "valkosetkortit/card231.png", "valkosetkortit/card232.png", "valkosetkortit/card233.png", "valkosetkortit/card234.png", "valkosetkortit/card235.png", "valkosetkortit/card236.png", "valkosetkortit/card237.png", "valkosetkortit/card238.png", "valkosetkortit/card239.png", "valkosetkortit/card240.png", "valkosetkortit/card241.png", "valkosetkortit/card242.png", "valkosetkortit/card243.png", "valkosetkortit/card244.png", "valkosetkortit/card245.png", "valkosetkortit/card246.png", "valkosetkortit/card247.png", "valkosetkortit/card248.png", "valkosetkortit/card249.png", "valkosetkortit/card250.png", "valkosetkortit/card251.png", "valkosetkortit/card252.png", "valkosetkortit/card253.png", "valkosetkortit/card254.png", "valkosetkortit/card255.png", "valkosetkortit/card256.png", "valkosetkortit/card257.png", "valkosetkortit/card258.png", "valkosetkortit/card259.png", "valkosetkortit/card260.png", "valkosetkortit/card261.png", "valkosetkortit/card262.png", "valkosetkortit/card263.png", "valkosetkortit/card264.png", "valkosetkortit/card265.png", "valkosetkortit/card266.png", "valkosetkortit/card267.png", "valkosetkortit/card268.png", "valkosetkortit/card269.png", "valkosetkortit/card270.png", "valkosetkortit/card271.png", "valkosetkortit/card272.png", "valkosetkortit/card273.png", "valkosetkortit/card274.png", "valkosetkortit/card275.png", "valkosetkortit/card276.png", "valkosetkortit/card277.png", "valkosetkortit/card278.png", "valkosetkortit/card279.png", "valkosetkortit/card280.png", "valkosetkortit/card281.png", "valkosetkortit/card282.png", "valkosetkortit/card283.png", "valkosetkortit/card284.png", "valkosetkortit/card285.png", "valkosetkortit/card286.png", "valkosetkortit/card287.png", "valkosetkortit/card288.png", "valkosetkortit/card289.png", "valkosetkortit/card290.png", "valkosetkortit/card291.png", "valkosetkortit/card292.png", "valkosetkortit/card293.png", "valkosetkortit/card294.png", "valkosetkortit/card295.png", "valkosetkortit/card296.png", "valkosetkortit/card297.png", "valkosetkortit/card298.png", "valkosetkortit/card299.png", "valkosetkortit/card300.png", "valkosetkortit/card301.png", "valkosetkortit/card302.png", "valkosetkortit/card303.png", "valkosetkortit/card304.png", "valkosetkortit/card305.png", "valkosetkortit/card306.png", "valkosetkortit/card307.png", "valkosetkortit/card308.png", "valkosetkortit/card309.png", "valkosetkortit/card310.png", "valkosetkortit/card311.png", "valkosetkortit/card312.png", "valkosetkortit/card313.png", "valkosetkortit/card314.png", "valkosetkortit/card315.png", "valkosetkortit/card316.png", "valkosetkortit/card317.png", "valkosetkortit/card318.png", "valkosetkortit/card319.png", "valkosetkortit/card320.png", "valkosetkortit/card321.png", "valkosetkortit/card322.png", "valkosetkortit/card323.png", "valkosetkortit/card324.png", "valkosetkortit/card325.png", "valkosetkortit/card326.png", "valkosetkortit/card327.png", "valkosetkortit/card328.png", "valkosetkortit/card329.png", "valkosetkortit/card330.png", "valkosetkortit/card331.png", "valkosetkortit/card332.png", "valkosetkortit/card333.png", "valkosetkortit/card334.png", "valkosetkortit/card335.png", "valkosetkortit/card336.png", "valkosetkortit/card337.png", "valkosetkortit/card338.png", "valkosetkortit/card339.png", "valkosetkortit/card340.png", "valkosetkortit/card341.png", "valkosetkortit/card342.png", "valkosetkortit/card343.png", "valkosetkortit/card344.png", "valkosetkortit/card345.png", "valkosetkortit/card346.png", "valkosetkortit/card347.png", "valkosetkortit/card348.png", "valkosetkortit/card349.png", "valkosetkortit/card350.png", "valkosetkortit/card351.png", "valkosetkortit/card352.png", "valkosetkortit/card353.png", "valkosetkortit/card354.png", "valkosetkortit/card355.png", "valkosetkortit/card356.png", "valkosetkortit/card357.png", "valkosetkortit/card358.png", "valkosetkortit/card359.png", "valkosetkortit/card360.png", "valkosetkortit/card361.png", "valkosetkortit/card362.png", "valkosetkortit/card363.png", "valkosetkortit/card364.png", "valkosetkortit/card365.png", "valkosetkortit/card366.png", "valkosetkortit/card367.png", "valkosetkortit/card368.png", "valkosetkortit/card369.png", "valkosetkortit/card370.png", "valkosetkortit/card371.png", "valkosetkortit/card372.png", "valkosetkortit/card373.png", "valkosetkortit/card374.png", "valkosetkortit/card375.png", "valkosetkortit/card376.png", "valkosetkortit/card377.png", "valkosetkortit/card378.png", "valkosetkortit/card379.png", "valkosetkortit/card380.png", "valkosetkortit/card381.png", "valkosetkortit/card382.png", "valkosetkortit/card383.png", "valkosetkortit/card384.png", "valkosetkortit/card385.png", "valkosetkortit/card386.png", "valkosetkortit/card387.png", "valkosetkortit/card388.png", "valkosetkortit/card389.png", "valkosetkortit/card390.png", "valkosetkortit/card391.png", "valkosetkortit/card392.png", "valkosetkortit/card393.png", "valkosetkortit/card394.png", "valkosetkortit/card395.png", "valkosetkortit/card396.png", "valkosetkortit/card397.png", "valkosetkortit/card398.png", "valkosetkortit/card399.png", "valkosetkortit/card400.png", "valkosetkortit/card401.png", "valkosetkortit/card402.png", "valkosetkortit/card403.png", "valkosetkortit/card404.png", "valkosetkortit/card405.png", "valkosetkortit/card406.png", "valkosetkortit/card407.png", "valkosetkortit/card408.png", "valkosetkortit/card409.png", "valkosetkortit/card410.png", "valkosetkortit/card411.png", "valkosetkortit/card412.png", "valkosetkortit/card413.png", "valkosetkortit/card414.png", "valkosetkortit/card415.png", "valkosetkortit/card416.png", "valkosetkortit/card417.png", "valkosetkortit/card418.png", "valkosetkortit/card419.png", "valkosetkortit/card420.png", "valkosetkortit/card421.png", "valkosetkortit/card422.png", "valkosetkortit/card423.png", "valkosetkortit/card424.png", "valkosetkortit/card425.png", "valkosetkortit/card426.png", "valkosetkortit/card427.png", "valkosetkortit/card428.png", "valkosetkortit/card429.png", "valkosetkortit/card430.png", "valkosetkortit/card431.png", "valkosetkortit/card432.png", "valkosetkortit/card433.png", "valkosetkortit/card434.png", "valkosetkortit/card435.png", "valkosetkortit/card436.png", "valkosetkortit/card437.png", "valkosetkortit/card438.png", "valkosetkortit/card439.png", "valkosetkortit/card440.png", "valkosetkortit/card441.png", "valkosetkortit/card442.png", "valkosetkortit/card443.png", "valkosetkortit/card444.png", "valkosetkortit/card445.png", "valkosetkortit/card446.png", "valkosetkortit/card447.png", "valkosetkortit/card448.png", "valkosetkortit/card449.png", "valkosetkortit/card450.png", "valkosetkortit/card451.png", "valkosetkortit/card452.png", "valkosetkortit/card453.png", "valkosetkortit/card454.png", "valkosetkortit/card455.png", "valkosetkortit/card456.png", "valkosetkortit/card457.png", "valkosetkortit/card458.png", "valkosetkortit/card459.png", "valkosetkortit/card460.png", "valkosetkortit/card461.png", "valkosetkortit/card462.png", "valkosetkortit/card463.png"]
+
+        var musta = ["mustatkortit/card1.png", "mustatkortit/card2.png", "mustatkortit/card3.png", "mustatkortit/card4.png", "mustatkortit/card5.png", "mustatkortit/card6.png", "mustatkortit/card7.png", "mustatkortit/card8.png", "mustatkortit/card9.png", "mustatkortit/card10.png", "mustatkortit/card11.png", "mustatkortit/card12.png", "mustatkortit/card13.png", "mustatkortit/card14.png", "mustatkortit/card15.png", "mustatkortit/card16.png", "mustatkortit/card17.png", "mustatkortit/card18.png", "mustatkortit/card19.png", "mustatkortit/card20.png", "mustatkortit/card21.png", "mustatkortit/card22.png", "mustatkortit/card23.png", "mustatkortit/card24.png", "mustatkortit/card25.png", "mustatkortit/card26.png", "mustatkortit/card27.png", "mustatkortit/card28.png", "mustatkortit/card29.png", "mustatkortit/card30.png", "mustatkortit/card31.png", "mustatkortit/card32.png", "mustatkortit/card33.png", "mustatkortit/card34.png", "mustatkortit/card35.png", "mustatkortit/card36.png", "mustatkortit/card37.png", "mustatkortit/card38.png", "mustatkortit/card39.png", "mustatkortit/card40.png", "mustatkortit/card41.png", "mustatkortit/card42.png", "mustatkortit/card43.png", "mustatkortit/card44.png", "mustatkortit/card45.png", "mustatkortit/card46.png", "mustatkortit/card47.png", "mustatkortit/card48.png", "mustatkortit/card49.png", "mustatkortit/card50.png", "mustatkortit/card51.png", "mustatkortit/card52.png", "mustatkortit/card53.png", "mustatkortit/card54.png", "mustatkortit/card55.png", "mustatkortit/card56.png", "mustatkortit/card57.png", "mustatkortit/card58.png", "mustatkortit/card59.png", "mustatkortit/card60.png", "mustatkortit/card61.png", "mustatkortit/card62.png", "mustatkortit/card63.png", "mustatkortit/card64.png", "mustatkortit/card65.png", "mustatkortit/card66.png", "mustatkortit/card67.png", "mustatkortit/card68.png", "mustatkortit/card69.png", "mustatkortit/card70.png", "mustatkortit/card71.png", "mustatkortit/card72.png", "mustatkortit/card73.png", "mustatkortit/card74.png", "mustatkortit/card75.png", "mustatkortit/card76.png", "mustatkortit/card77.png", "mustatkortit/card78.png", "mustatkortit/card79.png", "mustatkortit/card80.png", "mustatkortit/card81.png", "mustatkortit/card82.png", "mustatkortit/card83.png", "mustatkortit/card84.png", "mustatkortit/card85.png", "mustatkortit/card86.png", "mustatkortit/card87.png", "mustatkortit/card88.png", "mustatkortit/card89.png"]
+
+        function change() {
+
+            var rand = Math.floor(Math.random() * valko.length);
+            document.getElementById("kayttaja").src = valko[rand];
+        }
+
+
+        function change2() {
+            var rand1 = Math.floor(Math.random() * musta.length);
+            document.getElementById("paakayttaja").src = musta[rand1];
+        }
+
+
+
+        function rooli() {
+
+            document.getElementById("punanen").setAttribute("onclick", "javascript: rooli2();");
+
+            document.getElementById("vihrea").setAttribute("onclick", "javascript: change2();");
+
+            var ss = document.getElementById("paakayttaja");
+            ss.style.display = "block";
+
+            var x = document.getElementById("kayttaja");
+            x.style.display = "none";
+
+        }
+
+
+        function rooli2() {
+
+            document.getElementById("punanen").setAttribute("onclick", "javascript: rooli();");
+
+            document.getElementById("vihrea").setAttribute("onclick", "javascript: change();");
+
+            var ss = document.getElementById("paakayttaja");
+            ss.style.display = "none";
+
+
+            var hh = document.getElementById("kayttaja");
+
+            hh.style.display = "block";
+
+
+        }
+
+    </script>
+    <div class="etusivu">
+
+        <h1 class="otsikko" data-text="OLLIN CARDS AGAINTS HUMANITY">OLLIN CARDS AGAINTS HUMANITY</h1>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <span class="paina2" id="paina" onclick="aloitus();">Aloita</span>
+            </div>
+        </div>
+        <div class="kortti">
+            <img class="oma" src="" id="kayttaja">
+        </div>
+        <div class="kortti">
+            <img class="oma" src="" id="paakayttaja">
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6">
+                <span class="valkovari2" id="valkovari" onclick="aloitus2();">Valko<br>kortti</span>
+            </div>
+            <div class="col-xs-6">
+                <span class="mustavari2" id="mustavari" onclick="aloitus3();">Musta kortti</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <span class="vaihto" id="vihrea" onclick="change();">Vaihda<br>kortti</span>
+            </div>
+            <div class="col-xs-6">
+                <span class="rooli" id="punanen" onclick="rooli();">Vaihda roolia</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
